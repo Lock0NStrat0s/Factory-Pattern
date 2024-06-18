@@ -1,10 +1,11 @@
-﻿namespace FactoryPattern
+﻿namespace FactoryPattern;
+
+public class Program
 {
-    public class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        Console.Write("Select an appliance (\"fridge\"(default), \"microwave\", or \"wash\"): ");
+        IAppliances appliance = ApplianceFactory.GetAppliance(Console.ReadLine());
+        appliance.Start();
     }
 }
